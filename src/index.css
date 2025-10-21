@@ -1,106 +1,283 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
 
+/* ─────────────────────────────────────────
+   THEME TOKENS (სტაბილური / საერთო)
+   ───────────────────────────────────────── */
 @theme {
-    --color-gray-light: #ffffff;
-    --color-gray-light-50: #f9fafb;
-    --color-gray-light-100: #f3f4f6;
-    --color-gray-light-200: #e5e7eb;
-    --color-gray-light-300: #d1d5db;
-    --color-gray-light-400: #9ca3af;
-    --color-gray-light-500: #6b7280;
-    --color-gray-light-600: #4b5563;
-    --color-gray-light-700: #374151;
-    --color-gray-light-800: #1f2937;
-    --color-gray-light-900: #111827;
-    --color-gray-light-950: #030712;
+  --font-inter: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
-    --color-gray-dark: #030712;
-    --color-gray-dark-50: #111827;
-    --color-gray-dark-100: #1f2937;
-    --color-gray-dark-200: #374151;
-    --color-gray-dark-300: #4b5563;
-    --color-gray-dark-400: #6b7280;
-    --color-gray-dark-500: #9ca3af;
-    --color-gray-dark-600: #d1d5db;
-    --color-gray-dark-700: #e5e7eb;
-    --color-gray-dark-800: #f3f4f6;
-    --color-gray-dark-900: #f9fafb;
-    --color-gray-dark-950: #ffffff;
+  /* Headings */
+  --text-h1-desktop: 60px; --leading-h1-desktop: 72px; --tracking-h1-desktop: -0.02em; --font-weight-h1-desktop: 700;
+  --text-h1-tablet: 48px; --leading-h1-tablet: 48px; --tracking-h1-tablet: -0.02em; --font-weight-h1-tablet: 700;
+  --text-h1-mobile: 36px; --leading-h1-mobile: 40px; --font-weight-h1-mobile: 600;
 
-    --color-emerald-500: #10b981;
-    --font-inter: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    /* === Headings === */
+  --text-h2-desktop: 36px; --leading-h2-desktop: 40px; --tracking-h2-desktop: -0.02em; --font-weight-h2-desktop: 600;
+  --text-h2-tablet: 18px; --leading-h2-tablet: 28px; --tracking-h2-tablet: -0.02em; --font-weight-h2-tablet: 600;
 
-    /* H1 */
-    --text-h1-desktop: 60px;
-    --leading-h1-desktop: 72px;
-    --tracking-h1-desktop: -0.02em;
-    --font-weight-h1-desktop: 700;
+  --text-h3-desktop: 30px; --leading-h3-desktop: 36px; --tracking-h3-desktop: -0.02em; --font-weight-h3-desktop: 600;
+  --text-h3-tablet: 24px; --leading-h3-tablet: 32px; --tracking-h3-tablet: -0.02em; --font-weight-h3-tablet: 600;
 
-    --text-h1-tablet: 48px;
-    --leading-h1-tablet: 48px;
-    --tracking-h1-tablet: -0.02em;
-    --font-weight-h1-tablet: 700;
+  /* Subtitles */
+  --text-subtitle: 20px; --leading-subtitle: 28px; --font-weight-subtitle: 400;
+  --text-subtitle-tablet: 18px; --leading-subtitle-tablet: 28px; --font-weight-subtitle-tablet: 600;
 
-    --text-h1-mobile: 36px;
-    --leading-h1-mobile: 40px;
-    --font-weight-h1-mobile: 600;
+  /* Body */
+  --text-body1: 18px; --leading-body1: 28px; --font-weight-body1: 400;
+  --text-body1-tablet: 16px; --leading-body1-tablet: 24px; --font-weight-body1-tablet: 400;
+  --text-body2: 16px; --leading-body2: 24px; --font-weight-body2: 400; --font-weight-body2-medium: 500; --font-weight-body2-semibold: 600;
+  --text-body3: 14px; --leading-body3: 20px; --font-weight-body3: 400; --font-weight-body3-medium: 500;
 
-    /* H2 */
-    --text-h2-desktop: 36px;
-    --leading-h2-desktop: 40px;
-    --tracking-h2-desktop: -0.02em;
-    --font-weight-h2-desktop: 600;
+  /* Shadows */
+  --shadow-md: 0 4px 3px 0 rgba(0, 0, 0, 0.07), 0 2px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 4px 3px 0 rgba(0, 0, 0, 0.10), 0 10px 8px 0 rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 25px 0 rgba(0, 0, 0, 0.15);
 
-    --text-h2-tablet: 18px;
-    --leading-h2-tablet: 28px;
-    --tracking-h2-tablet: -0.02em;
-    --font-weight-h2-tablet: 600;
+  /* Icon Button sizes */
+  --icon-btn-md-size: 36px;
+  --icon-btn-lg-size: 44px;
+  --icon-btn-radius: 8px;
+  --icon-btn-padding: 6px;
 
-    /* H3 */
-    --text-h3-desktop: 30px;
-    --leading-h3-desktop: 36px;
-    --tracking-h3-desktop: -0.02em;
-    --font-weight-h3-desktop: 600;
+  /* Focus ring & disabled opacity */
+  --focus-ring: 0 0 0 3px rgba(37, 99, 235, 0.35);
+  --disabled-opacity: 0.5;
 
-    --text-h3-tablet: 24px;
-    --leading-h3-tablet: 32px;
-    --tracking-h3-tablet: -0.02em;
-    --font-weight-h3-tablet: 600;
+  /* Semantic */
+  --color-emerald-500: #10b981;
+  --color-red-500: #ef4444;
+  --color-yellow-500: #f59e0b;
+  --color-blue-500: #3b82f6;
+}
 
-    /* === Subtitles === */
-    --text-subtitle: 20px;
-    --leading-subtitle: 28px;
-    --font-weight-subtitle: 400;
+/* ─────────────────────────────────────────
+   THEMES GROUPED: LIGHT & DARK
+   იდეა: ერთი და იგივე კომპონენტების ცვლადები იცვლება თემით.
+   ───────────────────────────────────────── */
 
-    --text-subtitle-tablet: 18px;
-    --leading-subtitle-tablet: 28px;
-    --font-weight-subtitle-tablet: 600;
+/* LIGHT (default) */
+:root,
+.theme-light {
+  /* Neutral scale used across components */
+  --Gray-50:  #f9fafb;
+  --Gray-100: #f3f4f6;
+  --Gray-200: #e5e7eb;
+  --Gray-300: #d1d5db;
+  --Gray-400: #9ca3af;
+  --Gray-500: #6b7280;
+  --Gray-600: #4b5563;
+  --Gray-700: #374151;
+  --Gray-800: #1f2937;
+  --Gray-900: #111827;
 
-    /* === Body 1 === */
-    --text-body1: 18px;
-    --leading-body1: 28px;
-    --font-weight-body1: 400;
+  /* Surface / Text shortcuts */
+  --surface: #ffffff;
+  --surface-muted: var(--Gray-100);
+  --text: var(--Gray-900);
+  --text-muted: var(--Gray-600);
 
-    --text-body1-tablet: 16px;
-    --leading-body1-tablet: 24px;
-    --font-weight-body1-tablet: 400;
+  /* Icon button palette */
+  --icon-btn-bg: #ffffff;
+  --icon-btn-bg-hover: var(--Gray-100);
+  --icon-btn-fg: var(--Gray-600);
+  --icon-btn-fg-hover: var(--Gray-700);
 
-    /* === Body 2 === */
-    --text-body2: 16px;
-    --leading-body2: 24px;
-    --font-weight-body2: 400;
-    --font-weight-body2-medium: 500;
-    --font-weight-body2-semibold: 600;
+  /* Link / Menu */
+  --menu-fg: var(--Gray-600);
+  --menu-fg-hover: var(--Gray-900);
 
-    /* === Body 3 === */
-    --text-body3: 14px;
-    --leading-body3: 20px;
-    --font-weight-body3: 400;
-    --font-weight-body3-medium: 500;
-  /* Drop Shadows */
-    --shadow-md: 0 4px 3px 0 rgba(0, 0, 0, 0.07), 0 2px 2px 0 rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 4px 3px 0 rgba(0, 0, 0, 0.10), 0 10px 8px 0 rgba(0, 0, 0, 0.04);
-    --shadow-2xl: 0 25px 25px 0 rgba(0, 0, 0, 0.15);
+  /* Utilities from your original helpers */
+  --chip-bg: var(--Gray-200);
+  --chip-fg: var(--Gray-900);
+
+  /* Context on dark surfaces (for invert helpers) */
+  --context-on-dark: var(--Gray-50);
+}
+
+/* DARK */
+.theme-dark {
+  --Gray-50:  #111827;
+  --Gray-100: #1f2937;
+  --Gray-200: #374151;
+  --Gray-300: #4b5563;
+  --Gray-400: #6b7280;
+  --Gray-500: #9ca3af;
+  --Gray-600: #d1d5db;
+  --Gray-700: #e5e7eb;
+  --Gray-800: #f3f4f6;
+  --Gray-900: #f9fafb;
+
+  --surface: #0b0f17;         /* slightly deeper than Gray-50 for bg */
+  --surface-muted: var(--Gray-100);
+  --text: var(--Gray-900);
+  --text-muted: var(--Gray-600);
+
+  --icon-btn-bg: transparent;
+  --icon-btn-bg-hover: var(--Gray-100);
+  --icon-btn-fg: var(--Gray-400);
+  --icon-btn-fg-hover: var(--Gray-900);
+
+  --menu-fg: var(--Gray-600);
+  --menu-fg-hover: var(--Gray-900);
+
+  --chip-bg: var(--Gray-200);
+  --chip-fg: var(--Gray-900);
+
+  --context-on-dark: #111827; /* readable on bright chips in dark */
+}
+
+/* ─────────────────────────────────────────
+   COMPONENTS (theme-agnostic: იღებენ ზემოთ ძვლადებს)
+   ───────────────────────────────────────── */
+@layer components {
+  /* Icon Button */
+  .icon-btn {
+    @apply inline-flex items-center justify-center focus:outline-none disabled:pointer-events-none;
+    width: var(--icon-btn-md-size);
+    height: var(--icon-btn-md-size);
+    padding: var(--icon-btn-padding);
+    border-radius: var(--icon-btn-radius);
+    background-color: var(--icon-btn-bg);
+    color: var(--icon-btn-fg);
+    transition: background-color 120ms ease, color 120ms ease, box-shadow 120ms ease;
+  }
+  .icon-btn.icon-btn-lg { width: var(--icon-btn-lg-size); height: var(--icon-btn-lg-size); }
+  .icon-btn:hover { background-color: var(--icon-btn-bg-hover); color: var(--icon-btn-fg-hover); }
+  .icon-btn:focus-visible { box-shadow: var(--focus-ring); }
+
+  /* Subtitle — Semi */
+  .subtitle-semi {
+    font-family: var(--font-inter);
+    font-size: 20px; line-height: 28px; font-weight: 600;
+    color: var(--text);
+  }
+
+  /* Simple surfaces from your md/lg helpers */
+  .md-bg { border-radius: 8px; background: var(--surface-muted); }
+  .lg-bg { border-radius: 8px; background: var(--surface-muted); }
+
+  /* Tag */
+  .tag {
+    display: inline-flex; padding: 4px 20px; justify-content: center; align-items: center;
+    border-radius: 12px; font-family: var(--font-inter);
+    font-size: 14px; line-height: 20px; color: var(--chip-fg);
+    background: var(--chip-bg);
+    transition: background-color 120ms ease, color 120ms ease;
+  }
+
+  /* Buttons (neutral, theme-aware) */
+  .btn {
+    display: inline-flex; gap: 8px; padding: 6px 16px; border-radius: 12px;
+    font-family: var(--font-inter); font-size: 16px; line-height: 24px; font-weight: 500;
+    cursor: pointer; user-select: none; border: none; color: var(--text);
+    background: var(--surface-muted);
+    transition: background-color 150ms ease, color 150ms ease, box-shadow 150ms ease, opacity 150ms ease;
+  }
+  .btn-sm { padding: 4px 12px; font-size: 14px; line-height: 20px; border-radius: 10px; }
+  .btn-lg { padding: 10px 20px; font-size: 18px; line-height: 28px; border-radius: 14px; }
+  .btn-outline { background: transparent; border: 1px solid var(--Gray-200); }
+  .btn-ghost { background: transparent; border: none; }
+  .btn-block { display: flex; width: 100%; justify-content: center; }
+
+  .btn:focus-visible { outline: none; box-shadow: var(--focus-ring); border-radius: 12px; }
+  .btn[disabled], .btn.disabled { opacity: var(--disabled-opacity); pointer-events: none; cursor: not-allowed; }
+
+  /* “Solid dark” and “solid light” as color variants (არ არის თემის სვიჩი) */
+  .btn-solid-dark { background: var(--Gray-900); color: var(--Gray-900-contrast, #f9fafb); }
+  .btn-solid-dark:hover { background: var(--Gray-700); }
+  .btn-solid-dark:active { background: var(--Gray-800); }
+
+  .btn-solid-light { background: var(--Gray-700); color: #111827; }
+  .btn-solid-light:hover { filter: brightness(0.98); }
+  .btn-solid-light:active { filter: brightness(0.96); }
+
+  /* Contextuals */
+  .context-success { background: var(--color-emerald-500); color: #fff; }
+  .context-warning { background: var(--color-yellow-500); color: #000; }
+  .context-danger  { background: var(--color-red-500); color: #fff; }
+  .context-info    { background: var(--color-blue-500); color: #fff; }
+  .context-success:hover,
+  .context-warning:hover,
+  .context-danger:hover,
+  .context-info:hover { filter: brightness(0.95); }
+  .context-success:active,
+  .context-warning:active,
+  .context-danger:active,
+  .context-info:active { filter: brightness(0.9); }
+
+  .invert-on-dark { color: var(--context-on-dark); }
+
+  /* Menu & Links (ერთი კლასი, თემაზე დამოკიდებული ფერებით) */
+  .menu-link {
+    display: inline-flex; justify-content: center; align-items: center;
+    font-family: var(--font-inter); font-size: 16px; font-weight: 500; line-height: 24px;
+    color: var(--menu-fg); transition: color 120ms ease;
+  }
+  .menu-link:hover { color: var(--menu-fg-hover); }
+
+  .link-normal {
+    display: inline-flex; justify-content: center; align-items: center;
+    font-family: var(--font-inter); font-size: 16px; font-weight: 400; line-height: 24px;
+    color: var(--menu-fg); text-decoration-line: underline;
+    text-decoration-style: solid; text-decoration-skip-ink: none;
+    text-decoration-thickness: auto; text-underline-offset: auto; text-underline-position: from-font;
+    transition: color 120ms ease;
+  }
+  .link-normal:hover { color: var(--menu-fg-hover); }
+
+  /* Nav */
+  .nav-item {
+    display: inline-flex; align-items: center; padding: 8px 12px;
+    font-family: var(--font-inter); font-size: 16px; font-weight: 500; line-height: 24px;
+    color: var(--menu-fg); transition: color 120ms ease; text-decoration: none;
+  }
+  .nav-item:hover { color: var(--menu-fg-hover); }
+  .nav-item.active { color: var(--menu-fg-hover); font-weight: 600; }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    display: flex; gap: 8px; align-items: center;
+    font-family: var(--font-inter); font-size: 14px; line-height: 20px; color: var(--text-muted);
+  }
+  .breadcrumb a { color: inherit; text-decoration: none; }
+  .breadcrumb a:hover { color: var(--menu-fg-hover); }
+
+  /* Focusable common */
+  .menu-link:focus-visible,
+  .link-normal:focus-visible,
+  .nav-item:focus-visible,
+  .breadcrumb a:focus-visible,
+  .btn:focus-visible,
+  .icon-btn:focus-visible {
+    outline: none; box-shadow: var(--focus-ring); border-radius: 6px;
+  }
+
+  /* Disabled link/helper */
+  .disabled-link,
+  .link-normal.disabled,
+  .menu-link.disabled {
+    opacity: var(--disabled-opacity); pointer-events: none; cursor: default;
+  }
+
+  /* Elevation */
+  .elevate { box-shadow: var(--shadow-md); }
+
+  /* Nav link: use requested color + Body2/Medium typography */
+  .nav-link {
+    color: var(--Gray-Dark-600, #D1D5DB);
+    font-family: var(--font-inter);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 150% */
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    transition: color 120ms ease;
+  }
+  .nav-link:hover,
+  .nav-link:focus {
+    color: var(--menu-fg-hover, var(--Gray-Dark-900, #F9FAFB));
+    text-decoration: underline;
+  }
 }
