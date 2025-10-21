@@ -1,1 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
+
+@theme {
+    --color-gray-light: #ffffff;
+    --color-gray-light-50: #f9fafb;
+    --color-gray-light-100: #f3f4f6;
+    --color-gray-light-200: #e5e7eb;
+    --color-gray-light-300: #d1d5db;
+    --color-gray-light-400: #9ca3af;
+    --color-gray-light-500: #6b7280;
+    --color-gray-light-600: #4b5563;
+    --color-gray-light-700: #374151;
+    --color-gray-light-800: #1f2937;
+    --color-gray-light-900: #111827;
+    --color-gray-light-950: #030712;
+
+    --color-gray-dark: #030712;
+    --color-gray-dark-50: #111827;
+    --color-gray-dark-100: #1f2937;
+    --color-gray-dark-200: #374151;
+    --color-gray-dark-300: #4b5563;
+    --color-gray-dark-400: #6b7280;
+    --color-gray-dark-500: #9ca3af;
+    --color-gray-dark-600: #d1d5db;
+    --color-gray-dark-700: #e5e7eb;
+    --color-gray-dark-800: #f3f4f6;
+    --color-gray-dark-900: #f9fafb;
+    --color-gray-dark-950: #ffffff;
+
+    --color-emerald-500: #10b981;
+    --font-inter: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    /* === Headings === */
+
+    /* H1 */
+    --text-h1-desktop: 60px;
+    --leading-h1-desktop: 72px;
+    --tracking-h1-desktop: -0.02em;
+    --font-weight-h1-desktop: 700;
+
+    --text-h1-tablet: 48px;
+    --leading-h1-tablet: 48px;
+    --tracking-h1-tablet: -0.02em;
+    --font-weight-h1-tablet: 700;
+
+    --text-h1-mobile: 36px;
+    --leading-h1-mobile: 40px;
+    --font-weight-h1-mobile: 600;
+
+    /* H2 */
+    --text-h2-desktop: 36px;
+    --leading-h2-desktop: 40px;
+    --tracking-h2-desktop: -0.02em;
+    --font-weight-h2-desktop: 600;
+
+    --text-h2-tablet: 18px;
+    --leading-h2-tablet: 28px;
+    --tracking-h2-tablet: -0.02em;
+    --font-weight-h2-tablet: 600;
+
+    /* H3 */
+    --text-h3-desktop: 30px;
+    --leading-h3-desktop: 36px;
+    --tracking-h3-desktop: -0.02em;
+    --font-weight-h3-desktop: 600;
+
+    --text-h3-tablet: 24px;
+    --leading-h3-tablet: 32px;
+    --tracking-h3-tablet: -0.02em;
+    --font-weight-h3-tablet: 600;
+
+    /* === Subtitles === */
+    --text-subtitle: 20px;
+    --leading-subtitle: 28px;
+    --font-weight-subtitle: 400;
+
+    --text-subtitle-tablet: 18px;
+    --leading-subtitle-tablet: 28px;
+    --font-weight-subtitle-tablet: 600;
+
+    /* === Body 1 === */
+    --text-body1: 18px;
+    --leading-body1: 28px;
+    --font-weight-body1: 400;
+
+    --text-body1-tablet: 16px;
+    --leading-body1-tablet: 24px;
+    --font-weight-body1-tablet: 400;
+
+    /* === Body 2 === */
+    --text-body2: 16px;
+    --leading-body2: 24px;
+    --font-weight-body2: 400;
+    --font-weight-body2-medium: 500;
+    --font-weight-body2-semibold: 600;
+
+    /* === Body 3 === */
+    --text-body3: 14px;
+    --leading-body3: 20px;
+    --font-weight-body3: 400;
+    --font-weight-body3-medium: 500;
+  /* Drop Shadows */
+    --shadow-md: 0 4px 3px 0 rgba(0, 0, 0, 0.07), 0 2px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 4px 3px 0 rgba(0, 0, 0, 0.10), 0 10px 8px 0 rgba(0, 0, 0, 0.04);
+    --shadow-2xl: 0 25px 25px 0 rgba(0, 0, 0, 0.15);
+}
