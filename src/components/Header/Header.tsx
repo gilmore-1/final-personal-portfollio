@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { useTheme } from '../../context/ThemeContext'
 
 const Header = () => {
@@ -19,10 +19,10 @@ const Header = () => {
     console.log('Current theme in Header:', theme);
     return (
         <header
-            className={`w-full border-b border-transparent ${theme === 'dark' ? 'bg-[#1F2937]' : 'bg-white'}`}
+            className={`w-full border-b border-transparent ${theme === 'dark' ? 'bg-[#111827]' : 'bg-white'}`}
         >
-            <div className={`flex items-center justify-between self-stretch px-4 sm:px-6 md:px-[80px] py-4`}>
-                <p className={`text-center text-[30px] font-bold leading-[120%] tracking-[-0.6px] ${theme === 'dark' ? 'text-[#F9FAFB]' : 'text-black'}`}>
+            <div className={`flex items-center justify-between self-stretch px-4 sm:px-6 md:px-20 py-4`}>
+                <p className={`text-center text-h3-desktop font-bold leading-[120%] tracking-[-0.6px] ${theme === 'dark' ? 'text-[#F9FAFB]' : 'text-black'}`}>
                     <code>{'<SS />'}</code>
                 </p>
                 {/* Desktop nav (hidden on small screens) */}
