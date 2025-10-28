@@ -90,7 +90,7 @@ const Header = () => {
             {/* Mobile menu panel */}
             <div className={`md:hidden transition-max-h duration-200 ease-in-out overflow-hidden ${mobileOpen ? 'max-h-96' : 'max-h-0'}`}>
                 <div 
-                    className="px-4 pb-4"
+                    className="px-4 sm:px-6 pb-4 container-main mx-auto"
                     style={{ 
                         background: theme === 'dark' ? '#030712' : 'var(--surface)',
                         color: 'var(--text)'
