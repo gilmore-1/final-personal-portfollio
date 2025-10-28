@@ -426,7 +426,7 @@ body {
   }
 
   .skill-icon-wrapper {
-    @apply w-12 sm:w-14 md:w-16 lg:w-20 2xl:w-22 h-12 sm:h-14 md:h-16 lg:h-20 2xl:h-22 flex items-center justify-center relative transition-transform duration-300;
+    @apply w-12 sm:w-14 md:w-16 lg:w-20 2xl:w-24 h-12 sm:h-14 md:h-16 lg:h-20 2xl:h-24 flex items-center justify-center relative transition-transform duration-300;
   }
 
   .skill-card:hover .skill-icon-wrapper {
@@ -519,5 +519,80 @@ body {
 
   .experience-list-item span:first-child {
     @apply shrink-0;
+  }
+
+  /* Work section styles */
+  .work-title {
+    @apply inline-flex items-center justify-center rounded-xl px-5 py-1 text-sm font-medium;
+    font-family: var(--font-inter);
+    color: var(--text);
+    background: var(--Gray-200);
+    line-height: var(--leading-body3);
+  }
+
+  .work-description {
+    @apply text-base sm:text-lg lg:text-xl text-center;
+    font-family: var(--font-inter);
+    color: var(--text-muted);
+  }
+
+  .work-card {
+    @apply w-full rounded-xl overflow-hidden transition-all duration-300;
+    background: var(--surface);
+    border: 1px solid var(--Gray-200);
+  }
+
+  .work-card:hover {
+    @apply shadow-lg;
+    transform: translateY(-2px);
+  }
+
+  .theme-dark .work-card {
+    background: var(--Gray-100);
+    border-color: var(--Gray-200);
+  }
+
+  .work-image-wrapper {
+    display: flex;
+    padding: 48px;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 0;
+    align-self: stretch;
+    background: var(--Gray-200);
+  }
+
+  @media (min-width: 768px) {
+    .work-image-wrapper {
+      border-radius: 12px 0 0 12px;
+      border-right: 1px solid var(--Gray-100);
+    }
+  }
+
+  .work-content {
+    @apply flex flex-col gap-4 sm:gap-6 p-6 sm:p-8 md:p-12 flex-1;
+  }
+
+  .work-project-title {
+    @apply text-xl sm:text-2xl font-semibold;
+    font-family: var(--font-inter);
+    color: var(--text);
+  }
+
+  .work-project-description {
+    @apply text-sm sm:text-base;
+    font-family: var(--font-inter);
+    color: var(--text-muted);
+  }
+
+  .work-tech-stack {
+    @apply flex flex-wrap gap-2;
+  }
+
+  .work-tech-tag {
+    @apply px-3 sm:px-4 py-1 sm:py-1.5 rounded-xl text-xs sm:text-sm font-medium;
+    font-family: var(--font-inter);
+    color: var(--text);
+    background: var(--Gray-200);
   }
 }
