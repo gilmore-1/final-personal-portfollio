@@ -19,30 +19,38 @@ const Header = () => {
     console.log('Current theme in Header:', theme);
     return (
         <header
-            className={`w-full border-b border-transparent ${theme === 'dark' ? 'bg-[#111827]' : 'bg-white'}`}
+            style={{ 
+                background: theme === 'dark' ? '#030712' : 'var(--surface)',
+                borderBottom: `1px solid ${theme === 'dark' ? '#374151' : '#e5e7eb'}`
+            }}
+            className="w-full"
         >
-            <div className={`flex items-center justify-between self-stretch px-4 sm:px-6 md:px-20 py-4`}>
-                <p className={`text-center text-h3-desktop font-bold leading-[120%] tracking-[-0.6px] ${theme === 'dark' ? 'text-[#F9FAFB]' : 'text-black'}`}>
+            <div className="flex items-center justify-between self-stretch px-4 sm:px-6 md:px-20 py-4 container-main">
+                <p style={{ color: 'var(--text)' }} className="text-center text-h3-desktop font-bold leading-[120%] tracking-[-0.6px]">
                     <code>{'<SS />'}</code>
                 </p>
                 {/* Desktop nav (hidden on small screens) */}
                 <nav className="hidden md:flex items-center space-x-6">
                     <ul className="flex space-x-6">
-                        <li><a href="#about" className={`nav-link ${theme === 'dark' ? 'text-[#F9FAFB]' : 'text-black'}`}>About</a></li>
-                        <li><a href="#projects" className={`nav-link ${theme === 'dark' ? 'text-[#F9FAFB]' : 'text-black'}`}>Work</a></li>
-                        <li><a href="#testimonials" className={`nav-link ${theme === 'dark' ? 'text-[#F9FAFB]' : 'text-black'}`}>Testimonials</a></li>
-                        <li><a href="#contact" className={`nav-link ${theme === 'dark' ? 'text-[#F9FAFB]' : 'text-black'}`}>Contact</a></li>
+                        <li><a href="#about" className="nav-link">About</a></li>
+                        <li><a href="#projects" className="nav-link">Work</a></li>
+                        <li><a href="#testimonials" className="nav-link">Testimonials</a></li>
+                        <li><a href="#contact" className="nav-link">Contact</a></li>
                     </ul>
                     <div className="flex items-center">
                         <button
                             onClick={toggleTheme}
                             aria-label="Toggle theme"
-                            className={`icon-btn ${theme === 'dark' ? 'bg-white text-black' : 'bg-black text-white'}`}
+                            className="icon-btn"
+                            style={{ 
+                                background: theme === 'dark' ? 'white' : 'black',
+                                color: theme === 'dark' ? 'black' : 'white'
+                            }}
                             title={theme === 'dark' ? 'Switch to light' : 'Switch to dark'}
                         >
                             {theme === 'dark' ? '☀️' : '🌙'}
                         </button>
-                        <button className={`btn ml-4 ${theme === 'dark' ? 'bg-[#3B82F6] text-white hover:bg-[#2563EB]' : 'bg-[#3B82F6] text-white hover:bg-[#2563EB]'}`}>
+                        <button className="btn context-info ml-4">
                             Download CV
                         </button>
                     </div>
@@ -54,7 +62,8 @@ const Header = () => {
                         onClick={() => setMobileOpen(prev => !prev)}
                         aria-expanded={mobileOpen}
                         aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-                        className={`p-2 rounded-md focus:outline-none focus:ring-2 ${theme === 'dark' ? 'text-white' : 'text-black'}`}
+                        className="p-2 rounded-md focus:outline-none focus:ring-2"
+                        style={{ color: 'var(--text)' }}
                     >
                         {/* simple icons */}
                         {mobileOpen ? (
@@ -66,7 +75,11 @@ const Header = () => {
                     <button
                         onClick={toggleTheme}
                         aria-label="Toggle theme"
-                        className={`icon-btn ml-2 ${theme === 'dark' ? 'bg-white text-black' : 'bg-black text-white'}`}
+                        className="icon-btn ml-2"
+                        style={{ 
+                            background: theme === 'dark' ? 'white' : 'black',
+                            color: theme === 'dark' ? 'black' : 'white'
+                        }}
                         title={theme === 'dark' ? 'Switch to light' : 'Switch to dark'}
                     >
                         {theme === 'dark' ? '☀️' : '🌙'}
@@ -76,15 +89,21 @@ const Header = () => {
 
             {/* Mobile menu panel */}
             <div className={`md:hidden transition-max-h duration-200 ease-in-out overflow-hidden ${mobileOpen ? 'max-h-96' : 'max-h-0'}`}>
-                <div className={`${theme === 'dark' ? 'bg-[#111827] text-[#F9FAFB]' : 'bg-white text-black'} px-4 pb-4`}>
+                <div 
+                    className="px-4 pb-4"
+                    style={{ 
+                        background: theme === 'dark' ? '#030712' : 'var(--surface)',
+                        color: 'var(--text)'
+                    }}
+                >
                     <ul className="flex flex-col space-y-3 pt-2">
-                        <li><a href="#about" onClick={() => setMobileOpen(false)} className="block">About</a></li>
-                        <li><a href="#projects" onClick={() => setMobileOpen(false)} className="block">Work</a></li>
-                        <li><a href="#testimonials" onClick={() => setMobileOpen(false)} className="block">Testimonials</a></li>
-                        <li><a href="#contact" onClick={() => setMobileOpen(false)} className="block">Contact</a></li>
+                        <li><a href="#about" onClick={() => setMobileOpen(false)} className="nav-link block">About</a></li>
+                        <li><a href="#projects" onClick={() => setMobileOpen(false)} className="nav-link block">Work</a></li>
+                        <li><a href="#testimonials" onClick={() => setMobileOpen(false)} className="nav-link block">Testimonials</a></li>
+                        <li><a href="#contact" onClick={() => setMobileOpen(false)} className="nav-link block">Contact</a></li>
                     </ul>
                     <div className="mt-3 flex items-center space-x-3">
-                        <button className={`btn ${theme === 'dark' ? 'bg-[#3B82F6] text-white hover:bg-[#2563EB]' : 'bg-[#3B82F6] text-white hover:bg-[#2563EB]'}`}>
+                        <button className="btn context-info">
                             Download CV
                         </button>
                     </div>

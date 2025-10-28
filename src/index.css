@@ -272,7 +272,7 @@ body {
 
   /* Nav link: use requested color + Body2/Medium typography */
   .nav-link {
-    color: var(--Gray-Dark-600, #D1D5DB);
+    color: var(--text);
     font-family: var(--font-inter);
     font-size: 16px;
     font-style: normal;
@@ -285,7 +285,7 @@ body {
   }
   .nav-link:hover,
   .nav-link:focus {
-    color: var(--menu-fg-hover, var(--Gray-Dark-900, #F9FAFB));
+    color: var(--menu-fg-hover);
     text-decoration: underline;
   }
 
@@ -295,5 +295,56 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
+  }
+
+  /* Hero section styles */
+  .hero-title {
+    font-family: var(--font-inter);
+    font-size: var(--text-h1-mobile);
+    line-height: var(--leading-h1-mobile);
+    font-weight: var(--font-weight-h1-mobile);
+    color: var(--text);
+    letter-spacing: var(--tracking-h1-desktop);
+  }
+  
+  @media (min-width: 768px) {
+    .hero-title {
+      font-size: var(--text-h1-tablet);
+      line-height: var(--leading-h1-tablet);
+      font-weight: var(--font-weight-h1-tablet);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .hero-title {
+      font-size: var(--text-h1-desktop);
+      line-height: var(--leading-h1-desktop);
+      font-weight: var(--font-weight-h1-desktop);
+    }
+  }
+
+  .hero-description {
+    font-family: var(--font-inter);
+    font-size: var(--text-body1-tablet);
+    line-height: var(--leading-body1-tablet);
+    font-weight: var(--font-weight-body1-tablet);
+    color: var(--text-muted);
+    margin-top: 8px;
+  }
+  
+  @media (min-width: 1024px) {
+    .hero-description {
+      font-size: var(--text-body1);
+      line-height: var(--leading-body1);
+      font-weight: var(--font-weight-body1);
+    }
+  }
+
+  .hero-stat {
+    font-family: var(--font-inter);
+    font-size: var(--text-body2);
+    line-height: var(--leading-body2);
+    font-weight: var(--font-weight-body2);
+    color: var(--text-muted);
   }
 }
