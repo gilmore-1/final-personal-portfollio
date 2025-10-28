@@ -11,8 +11,21 @@ const Testimonials = () => {
         >
             <div className="flex flex-col gap-8 sm:gap-10 md:gap-12 items-center w-full">
                 <div className="flex flex-col gap-4 items-center max-w-3xl">
-                    <h2 className="testimonials-title">Testimonials</h2>
-                    <p className="testimonials-description px-4">Nice things people have said about me:</p>
+                    <h2 
+                        className="flex px-5 py-1 justify-center items-center rounded-xl text-sm font-medium"
+                        style={{ 
+                            background: theme === 'dark' ? '#374151' : 'var(--Gray-200)',
+                            color: theme === 'dark' ? '#F9FAFB' : 'var(--text)'
+                        }}
+                    >
+                        Testimonials
+                    </h2>
+                    <p 
+                        className="text-center text-xl font-normal leading-7 px-4"
+                        style={{ color: theme === 'dark' ? '#D1D5DB' : 'var(--text-muted)' }}
+                    >
+                        Nice things people have said about me:
+                    </p>
                 </div>
                 
                 <div className="flex flex-wrap gap-4 sm:gap-6 md:gap-8 lg:gap-10 w-full justify-center items-center">
