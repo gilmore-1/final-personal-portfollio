@@ -4,6 +4,13 @@
 /* ─────────────────────────────────────────
    THEME TOKENS (სტაბილური / საერთო)
    ───────────────────────────────────────── */
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Offset for fixed header */
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -299,196 +306,106 @@ body {
 
   /* Hero section styles */
   .hero-title {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight;
     font-family: var(--font-inter);
-    font-size: var(--text-h1-mobile);
-    line-height: var(--leading-h1-mobile);
-    font-weight: var(--font-weight-h1-mobile);
     color: var(--text);
-    letter-spacing: var(--tracking-h1-desktop);
+    line-height: var(--leading-h1-mobile);
   }
   
   @media (min-width: 768px) {
     .hero-title {
-      font-size: var(--text-h1-tablet);
       line-height: var(--leading-h1-tablet);
-      font-weight: var(--font-weight-h1-tablet);
     }
   }
   
   @media (min-width: 1024px) {
     .hero-title {
-      font-size: var(--text-h1-desktop);
       line-height: var(--leading-h1-desktop);
-      font-weight: var(--font-weight-h1-desktop);
     }
   }
 
   .hero-description {
+    @apply text-base lg:text-lg mt-2;
     font-family: var(--font-inter);
-    font-size: var(--text-body1-tablet);
-    line-height: var(--leading-body1-tablet);
-    font-weight: var(--font-weight-body1-tablet);
     color: var(--text-muted);
-    margin-top: 8px;
+    line-height: var(--leading-body1-tablet);
   }
   
   @media (min-width: 1024px) {
     .hero-description {
-      font-size: var(--text-body1);
       line-height: var(--leading-body1);
-      font-weight: var(--font-weight-body1);
     }
   }
 
   .hero-stat {
+    @apply text-base;
     font-family: var(--font-inter);
-    font-size: var(--text-body2);
-    line-height: var(--leading-body2);
-    font-weight: var(--font-weight-body2);
     color: var(--text-muted);
+    line-height: var(--leading-body2);
   }
 
   /* About section styles */
   .about-title {
+    @apply text-2xl lg:text-3xl font-semibold tracking-tight;
     font-family: var(--font-inter);
-    font-size: var(--text-h3-tablet);
-    line-height: var(--leading-h3-tablet);
-    font-weight: var(--font-weight-h3-tablet);
-    letter-spacing: var(--tracking-h3-desktop);
     color: var(--text);
+    line-height: var(--leading-h3-tablet);
   }
   
   @media (min-width: 1024px) {
     .about-title {
-      font-size: var(--text-h3-desktop);
       line-height: var(--leading-h3-desktop);
-      font-weight: var(--font-weight-h3-desktop);
     }
   }
 
   .about-text {
+    @apply text-base;
     font-family: var(--font-inter);
-    font-size: var(--text-body2);
-    line-height: var(--leading-body2);
-    font-weight: var(--font-weight-body2);
     color: var(--text-muted);
+    line-height: var(--leading-body2);
   }
 
   .about-description {
+    @apply text-base;
     font-family: var(--font-inter);
-    font-size: var(--text-body2);
-    line-height: var(--leading-body2);
-    font-weight: var(--font-weight-body2);
     color: var(--text-muted);
+    line-height: var(--leading-body2);
   }
 
   .about-subtitle {
+    @apply text-base font-semibold;
     font-family: var(--font-inter);
-    font-size: var(--text-body2);
-    line-height: var(--leading-body2);
-    font-weight: var(--font-weight-body2-semibold);
     color: var(--text);
+    line-height: var(--leading-body2);
   }
 
   /* Skills section styles */
   .skills-title {
+    @apply inline-flex items-center justify-center rounded-xl px-5 py-1 text-sm font-medium;
     font-family: var(--font-inter);
-    font-size: var(--text-body3);
-    line-height: var(--leading-body3);
-    font-weight: var(--font-weight-body3-medium);
     color: var(--text);
-    border-radius: 12px;
     background: var(--Gray-200);
-    padding: 4px 20px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    line-height: var(--leading-body3);
   }
 
   .skills-description {
+    @apply text-base sm:text-lg lg:text-xl text-center;
     font-family: var(--font-inter);
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 400;
-    font-style: normal;
     color: var(--text-muted);
-    text-align: center;
-  }
-
-  @media (min-width: 640px) {
-    .skills-description {
-      font-size: 18px;
-      line-height: 26px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .skills-description {
-      font-size: 20px;
-      line-height: 28px;
-    }
   }
 
   .skill-name {
+    @apply text-xs sm:text-sm lg:text-base text-center font-medium transition-colors duration-300;
     font-family: var(--font-inter);
-    font-size: 12px;
-    line-height: 16px;
-    font-weight: 500;
     color: var(--text-muted);
-    text-align: center;
-    transition: color 0.3s ease;
-  }
-  
-  @media (min-width: 480px) {
-    .skill-name {
-      font-size: 13px;
-      line-height: 18px;
-    }
-  }
-  
-  @media (min-width: 640px) {
-    .skill-name {
-      font-size: 14px;
-      line-height: 20px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .skill-name {
-      font-size: 16px;
-      line-height: 24px;
-    }
   }
 
   /* Skill Card Styles */
   .skill-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 8px;
-    border-radius: 12px;
+    @apply flex flex-col items-center gap-2 sm:gap-2.5 lg:gap-3 p-3 sm:p-3.5 lg:p-4 rounded-xl sm:rounded-2xl lg:rounded-2xl cursor-pointer opacity-0;
     background: transparent;
-    cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     animation: fadeInUp 0.6s ease-out forwards;
-    opacity: 0;
-  }
-
-  @media (min-width: 640px) {
-    .skill-card {
-      gap: 10px;
-      padding: 14px 10px;
-      border-radius: 14px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .skill-card {
-      gap: 12px;
-      padding: 16px 12px;
-      border-radius: 16px;
-    }
   }
 
   @keyframes fadeInUp {
@@ -503,66 +420,22 @@ body {
   }
 
   .skill-card:hover {
+    @apply -translate-y-2 scale-105;
     background: var(--surface-muted);
-    transform: translateY(-8px) scale(1.05);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
   }
 
   .skill-icon-wrapper {
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease;
-    position: relative;
-  }
-
-  @media (min-width: 480px) {
-    .skill-icon-wrapper {
-      width: 56px;
-      height: 56px;
-    }
-  }
-
-  @media (min-width: 640px) {
-    .skill-icon-wrapper {
-      width: 64px;
-      height: 64px;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .skill-icon-wrapper {
-      width: 72px;
-      height: 72px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .skill-icon-wrapper {
-      width: 80px;
-      height: 80px;
-    }
-  }
-
-  @media (min-width: 1536px) {
-    .skill-icon-wrapper {
-      width: 88px;
-      height: 88px;
-    }
+    @apply w-12 sm:w-14 md:w-16 lg:w-20 2xl:w-22 h-12 sm:h-14 md:h-16 lg:h-20 2xl:h-22 flex items-center justify-center relative transition-transform duration-300;
   }
 
   .skill-card:hover .skill-icon-wrapper {
-    transform: scale(1.1) rotate(5deg);
+    @apply scale-110 rotate-6;
   }
 
   .skill-icon {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    @apply w-full h-full object-contain transition-all duration-300;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-    transition: filter 0.3s ease;
   }
 
   .skill-card:hover .skill-icon {
@@ -570,13 +443,81 @@ body {
   }
 
   .skill-card:hover .skill-name {
+    @apply font-semibold;
     color: var(--text);
-    font-weight: 600;
   }
 
   /* Dark mode adjustments */
   .theme-dark .skill-card:hover {
     background: var(--Gray-100);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Experience section styles */
+  .experience-title {
+    @apply inline-flex items-center justify-center rounded-xl px-5 py-1 text-sm font-medium;
+    font-family: var(--font-inter);
+    color: var(--text);
+    background: var(--Gray-200);
+    line-height: var(--leading-body3);
+  }
+
+  .experience-description {
+    @apply text-base sm:text-lg lg:text-xl text-center;
+    font-family: var(--font-inter);
+    color: var(--text-muted);
+  }
+
+  .experience-card {
+    @apply w-full rounded-xl sm:rounded-2xl p-6 sm:p-8 transition-all duration-300;
+    background: var(--surface);
+    border: 1px solid var(--Gray-200);
+  }
+
+  .experience-card:hover {
+    @apply shadow-lg;
+    transform: translateY(-2px);
+  }
+
+  .theme-dark .experience-card {
+    background: var(--Gray-100);
+    border-color: var(--Gray-200);
+  }
+
+  .experience-logo-wrapper {
+    @apply w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 shrink-0 flex items-center justify-center rounded-lg;
+    background: var(--surface-muted);
+  }
+
+  .experience-company {
+    @apply text-lg sm:text-xl font-semibold;
+    font-family: var(--font-inter);
+    color: var(--text);
+  }
+
+  .experience-role {
+    @apply text-sm sm:text-base;
+    font-family: var(--font-inter);
+    color: var(--text-muted);
+  }
+
+  .experience-period {
+    @apply text-sm sm:text-base whitespace-nowrap;
+    font-family: var(--font-inter);
+    color: var(--text-muted);
+  }
+
+  .experience-list {
+    @apply flex flex-col gap-2 list-none pl-0;
+  }
+
+  .experience-list-item {
+    @apply flex items-start text-sm sm:text-base;
+    font-family: var(--font-inter);
+    color: var(--text-muted);
+  }
+
+  .experience-list-item span:first-child {
+    @apply shrink-0;
   }
 }

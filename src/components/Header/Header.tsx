@@ -23,7 +23,7 @@ const Header = () => {
                 background: theme === 'dark' ? '#030712' : 'var(--surface)',
                 borderBottom: `1px solid ${theme === 'dark' ? '#374151' : '#e5e7eb'}`
             }}
-            className="w-full"
+            className="w-full sticky top-0 z-50"
         >
             <div className="flex items-center justify-between self-stretch px-4 sm:px-6 md:px-20 py-4 container-main">
                 <p style={{ color: 'var(--text)' }} className="text-center text-h3-desktop font-bold leading-[120%] tracking-[-0.6px]">
@@ -33,8 +33,9 @@ const Header = () => {
                 <nav className="hidden md:flex items-center space-x-6">
                     <ul className="flex space-x-6">
                         <li><a href="#about" className="nav-link">About</a></li>
-                        <li><a href="#projects" className="nav-link">Work</a></li>
-                        <li><a href="#testimonials" className="nav-link">Testimonials</a></li>
+                        <li><a href="#skills" className="nav-link">Skills</a></li>
+                        <li><a href="#experience" className="nav-link">Experience</a></li>
+                        <li><a href="#work" className="nav-link">Work</a></li>
                         <li><a href="#contact" className="nav-link">Contact</a></li>
                     </ul>
                     <div className="flex items-center">
@@ -98,8 +99,9 @@ const Header = () => {
                 >
                     <ul className="flex flex-col space-y-3 pt-2">
                         <li><a href="#about" onClick={() => setMobileOpen(false)} className="nav-link block">About</a></li>
-                        <li><a href="#projects" onClick={() => setMobileOpen(false)} className="nav-link block">Work</a></li>
-                        <li><a href="#testimonials" onClick={() => setMobileOpen(false)} className="nav-link block">Testimonials</a></li>
+                        <li><a href="#skills" onClick={() => setMobileOpen(false)} className="nav-link block">Skills</a></li>
+                        <li><a href="#experience" onClick={() => setMobileOpen(false)} className="nav-link block">Experience</a></li>
+                        <li><a href="#work" onClick={() => setMobileOpen(false)} className="nav-link block">Work</a></li>
                         <li><a href="#contact" onClick={() => setMobileOpen(false)} className="nav-link block">Contact</a></li>
                     </ul>
                     <div className="mt-3 flex items-center space-x-3">

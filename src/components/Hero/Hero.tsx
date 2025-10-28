@@ -9,6 +9,7 @@ export const Hero = () => {
     
     return (
         <section 
+            id="home"
             className="w-full container-main px-4 sm:px-6 md:px-20 py-12 md:py-24"
             style={{ background: theme === 'dark' ? '#030712' : 'var(--surface)' }}
         >
