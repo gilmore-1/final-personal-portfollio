@@ -5,6 +5,7 @@ import Aboutme from './components/Aboutme/Aboutme'
 import Skills from './components/Skills/Skills'
 import Experience from './components/Experience/Experience'
 import Work from './components/Work/Work'
+import Testimonials from './components/Testimonials/Testimonials'
 
 const App = () => {
 	return (
@@ -15,6 +16,7 @@ const App = () => {
 			<Skills />
 			<Experience />
 			<Work />
+			<Testimonials />	
 		</ThemeProvider>
 	)
 }
