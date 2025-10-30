@@ -6,6 +6,8 @@ import Skills from './components/Skills/Skills'
 import Experience from './components/Experience/Experience'
 import Work from './components/Work/Work'
 import Testimonials from './components/Testimonials/Testimonials'
+import Touch from './components/Touch/Touch'
+import Footer from './components/Footer/Footer'
 
 const App = () => {
 	return (
@@ -17,6 +19,8 @@ const App = () => {
 			<Experience />
 			<Work />
 			<Testimonials />	
+			<Touch />
+			<Footer />
 		</ThemeProvider>
 	)
 }
